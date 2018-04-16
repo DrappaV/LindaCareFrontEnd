@@ -1,0 +1,21 @@
+{
+  "name": "EspacePerso-public",
+  "version": "0.13.0-SNAPSHOT",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-loader": "*",
+    "babel-preset-env": "*",
+    "raw-loader": "^0.5.1",
+    "webpack": "*",
+    "webpack-uglify-js-plugin": "*",
+    "whatwg-fetch": "*"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "scripts": {
+    "prepublish": "./node_modules/.bin/webpack --devtool eval-cheap-module-source-map  --watch --module-bind html=raw-loader  ./src/marketplace/common/main.js ./src/main/resources/static/assets/js/market-place.js"
+  }
+}
